@@ -1,0 +1,19 @@
+/* body{
+    background-image: url("../img/torresdelpaine.jpg");
+    font-family: sans-serif;
+    font-style: italic;
+    padding: 20px 20px;
+} */
+
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td{
+    padding: 10px;
+}
+
+th{
+    text-align: left;
+}
