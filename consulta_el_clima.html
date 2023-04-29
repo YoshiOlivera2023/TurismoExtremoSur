@@ -54,33 +54,19 @@
 <div class="container">
     <div> <h3>Ver el tiempo en Punta Arenas</h3></div><br>
 
-    <div class="boton"><input type="submit" onclick = "getTiempo()" value = "Consultar"></div><br/>
+    <div class="boton"><input type="submit" id="boton" value = "Consultar"></div><br/>
 </div>
 
 <!-- CONSTRUIR Y LLENAR TABLA CON DATOS DEL CLIMA EN PUNTA ARENAS -->
 <div class="container">
-  <div class="table-responsive">
     <div class="row">
-      <div class="col">
-        <div class="table" style="width: 100%;"> <!--class="modal-body" -->
-          <!-- <div class="col"> -->
-            <table id="tabla">
-              <thead>
-                <tr>
-                  <th>Fecha</th>
-                  <th>Hora</th>
-                  <th>Temperatura</th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- Aquí se agregarán las filas de datos -->
-              </tbody>
-            </table>
-          <!-- </div> -->
+
+      <div class="col-4" id="laciudad">        
+      </div>
+      <div class="col-8">
+        <div class="row row-cols-1 row-cols-md-4 g-4" id="eltiempo">
         </div>
       </div>
-    </div>
-  </div>
 </div>
       
   <!-- FOOTER -->

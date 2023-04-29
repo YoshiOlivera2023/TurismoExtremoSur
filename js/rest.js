@@ -1,48 +1,46 @@
-function getTiempo(){
-  let xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function(){
-    if(this.readyState == 4 && this.status == 200){
-      let clima = JSON.parse(this.responseText);
-      let fila1 = clima.hourly.time;
-      let fila3 = clima.hourly.temperature_2m;
-      let celcius = clima.hourly_units.temperature_2m;
-      console.log("Este es el resultado de la consulta en la API: ");
-      console.log(clima);
-      let contenidoTabla = document.getElementById("tabla");
+$(document).ready(function () 
+{ 
 
-      for(let i = 12; i < fila1.length; i+=24){
-          let fila = contenidoTabla.insertRow();
-          let columna1 = fila.insertCell();
-          let columna2 = fila.insertCell();
-          let columna3 = fila.insertCell()
-          columna1.innerHTML = convertirFecha(fila1[i]);
-          columna2.innerHTML = convertirHora(fila1[i]);
-          columna3.innerHTML = fila3[i]+celcius;
-      }
-    }
-  }
-  xhttp.open("GET","https://api.open-meteo.com/v1/forecast?latitude=-53.15&longitude=-70.91&hourly=temperature_2m&temperature_2m",true);
-  xhttp.send();
+  $("#boton").click(function()
+  {
 
-  function convertirFecha(fechaIngresada){
-    var fecha = new Date(fechaIngresada);
-    var formato = { day: 'numeric', month: 'long', year: 'numeric' };
-    var fechaFormateada = fecha.toLocaleDateString('es-ES', formato);
-    return fechaFormateada;
-  }
+    var url = "http://api.weatherapi.com/v1/forecast.json?key=b50edbdcb6524dafa4a142215232804&q=Punta Arenas&days=10&aqi=no&alerts=no&lang=es";
 
-  function convertirHora(fechaIngresada){
-    var fecha = new Date(fechaIngresada);
-    var formato = {hour: 'numeric', minute: 'numeric', hour12: true};
-    var horaFormateada = fecha.toLocaleTimeString('en-US', formato);
-    return horaFormateada;
-  }
+    $.ajax({
+      url: url,
+      type: "GET",
+      dataType: "json",
+      success: function(data) {
+        
+        
+        let city = data.location.name;
+        let country = data.location.country;
+        let region = data.location.region;
+        let forecast = data.forecast.forecastday;
 
-}
-
-// //viernes 28 la entrega 
-// //https://restcountries.com/v3.1/alpha/cl
+        var dias_tiempo = "";
+        forecast.forEach(function(day) 
+        {
+          let date = day.date;
+          let imgen = day.day.condition.icon;
+          let temp_c = day.day.avgtemp_c;
+          let condition = day.day.condition.text;
 
 
+          dias_tiempo += "<div class='col'><div class='card h-100' style='width: 10rem;'><img src='http:"+imgen+"' class='card-img-top' alt='El tiempo'><div class='card-body'><h5 class='card-title'>"+date+" </h5><h3 class='card-title'>"+temp_c+" °</h3><p class='card-text'>"+condition+"</p></div></div></div>";     
+        });
 
+        let eltiempo= "<div class='card' style='width: 18rem;'><img src='img/punta_arenas.jpg' class='card-img-top' alt='El tiempo'><div class='card-body'><h5 class='card-title'>"+city+"</h5><p class='card-text'>"+region+"</p></div></div>";
+
+
+        $("#laciudad").html(eltiempo);
+        $("#eltiempo").html(dias_tiempo);
+      },
+
+      
+    });
   
+
+  }); 
+         
+});
