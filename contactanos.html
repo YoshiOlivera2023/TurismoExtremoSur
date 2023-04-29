@@ -7,66 +7,618 @@
     <meta name="author" content="Juan Carlos Toledo, Yoshi Olivera">
     <meta name="generator" content="Hugo 0.111.3">
     <title> Turismo Extremo Sur/Contáctanos </title>
+    <link rel="icon" href="img/milodon_logo.png" type="image/x-icon">
     <link type="text/css" rel="stylesheet" href="css/style.css"/>
     <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script> 
     <script type="text/javascript" src="js/rest.js"></script>  
+    <script type="text/javascript" src="js/jquery.js"></script>   
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/carousel.css" rel="stylesheet">
   </head>
   <body>
 
     <header data-bs-theme="dark">
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-info-subtle">
         <div class="container-fluid">
-          <a class="navbar-logo" href="#">
-            <img src="img/logo.png" class="bd-placeholder-img" width="80px" height="80px" alt="thecleta" />
+          <a class="navbar-logo navbar-brand" href="index.html"> 
+            <img src="img/milodon_logo.png" class="bd-placeholder-img" width="60px" height="80px" alt="thecleta" href="index.html"/>
+            Turismo Extremo Sur
           </a>
-         
+     
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
+    
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link" aria-current="page" href="index.html"><h5>Home</h5></a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="quienes_somos.html">¿Quiénes somos?</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="nuestros_servicios.html">Nuestros servicios</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="consulta_el_clima.html">Consulta el Clima</a>
-              </li> 
-              <li class="nav-item">
-                <a class="nav-link" href="contactanos.html">Contáctanos</a>
-              </li>                     
-            </ul>
+                <li class="nav-item">
+                  <a class="nav-link" href="quienes_somos.html"><h5>¿Quiénes somos?</h5></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="nuestros_servicios.html"><h5>Nuestros servicios</h5></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="consulta_el_clima.html"><h5>Consulta el clima</h5></a>
+                </li> 
+                <li class="nav-item">
+                  <a class="nav-link active" href="contactanos.html"><h5>Contáctanos</h5></a>
+                </li>                     
+              </ul>
+      
+            <form class="d-flex" role="search">
+              <input class="form-control" type="search" placeholder="Buscar" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+    
           </div>
         </div>
       </nav>
     </header>
     <br/><br/><br/>
+
+
 <main>
+    <div class="container col-md-8">
+      <br>
+     <br>
+      <br>
+       <form id = "validarForm" class="row g-3">
+        <div class="container text-bg-primary ajuste"  style = "border-radius: 20px 20px;">
+          <h2 class="text-white text-center">Contacto</h1>
+      </div>
+          <div class="row g-3">
 
-    <div class="container col-md-3">
-      <br>
-      <br>
-      <br>
-      <form>
+            <div class="col-md-5">
+              <div class="form-floating">
+                <input type="text" id="rut" class="form-control" placeholder="Rut" required>
+                <label for="floatingInput">Rut</label>
+                <div id="mrut" class="text-danger"></div>
+              </div>
+            </div>
 
-        <h1 class="h3 mb-3 fw-normal">Ingrese numero de seguimiento</h1>
-    
-        <div class="form-floating">
-          <input type="numero" class="form-control" id="floatingInput" placeholder="numero de seguimiento">
-          <label for="floatingInput">Nro Seguimiento</label>
-          <br>
-        </div>
-      
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Buscar</button>
+            <div class="col-md-7">
+              <div class="form-floating">
+                <input type="text" id="nombres" class="form-control" placeholder="Nombres" required>
+                <label for="floatingInput">Nombres</label>
+                <div id="mnombres" class="text-danger"></div>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="text" id="apPaterno" class="form-control" placeholder="Apellido paterno" required>
+                <label for="floatingInput">Apellido paterno</label>
+                <div id="mapPaterno" class="text-danger"></div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="text" id="apMaterno" class="form-control" placeholder="Apellido materno" required>
+                <label for="floatingInput">Apellido materno</label>
+                <div id="mapMaterno" class="text-danger"></div>
+              </div>
+            </div>
+
+            <div class="row g-3">
+              <label for="inputState" class="form-label">N&uacute;mero de celular</label>
+              <div class="col-md-2">
+                <select id="codTel" class="form-select ajuste" required>
+                  <option selected>C&oacute;digo</option>
+                  <option>+1	</option>
+                  <option>+34 </option>
+                  <option>+54 </option>
+                  <option>+49 </option>
+                  <option>+55 </option>
+                  <option>+001</option>
+                  <option>+56 </option>
+                  <option>+33 </option>
+                  <option>+39 </option>
+                  <option>+52 </option>
+                  <option>+51 </option>
+                  <option>+58 </option>
+                </select>
+                <div id="mcodTel" class="text-danger"></div>
+              </div>  
+              <div class="col-md-3">
+                <input type="cel" id="telefono" class="form-control ajuste" required>
+                <div id="mtelefono" class="text-danger"></div>
+              </div>  
+            </div>
+
+            <div class="col-md-5">
+              <div class="form-floating">
+                <input type="email" id="correo" class="form-control" id="inputEmail4" placeholder="Correo Electrónico" required>
+                <label for="floatingInput">Correo Electr&oacute;nico</label>
+                <div id="mcorreo" class="text-danger"></div>
+              </div>
+            </div>
+
+            <div class="col-md-7">
+              <div class="form-floating">
+                <input type="text" id="direccion" class="form-control" id="inputAddress" placeholder="Dirección" required>
+                <label for="inputAddress" class="form-label">Direcci&oacute;n</label>
+                <div id="mdireccion" class="text-danger"></div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="inputState" class="form-label">Regi&oacute;n</label>
+              <select id="region" class="form-select ajuste" required>
+                <option selected>— Seleccione una región —</option>
+                <option>Región de Arica y Parinacota</option>
+                <option>Región de Tarapacá</option>
+                <option>Región de Antofagasta</option>
+                <option>Región de Atacama</option>
+                <option>Región de Coquimbo</option>
+                <option>Región de Valparaíso</option>
+                <option>Región Metropolitana</option>
+                <option>Región de O’Higgins</option>
+                <option>Región del Maule</option>
+                <option>Región del Ñuble</option>
+                <option>Región del Biobío</option>
+                <option>Región de La Araucanía</option>
+                <option>Región de Los Ríos</option>
+                <option>Región de Los Lagos</option>
+                <option>Región de Aysén</option>
+                <option>Región de Magallanes</option>
+              </select>
+              <div id="mregion" class="text-danger"></div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="inputState" class="form-label">Provincia</label>
+              <select id="provincia" class="form-select ajuste" required>
+                <option selected>— Seleccione una provincia —</option>
+                 <option>Antártica Chilena</option>
+                 <option>Antofagasta</option>
+                 <option>Arauco</option>
+                 <option>Arica</option>
+                 <option>Aysén</option>
+                 <option>Biobío</option>
+                 <option>Cachapoal</option>
+                 <option>Capitán Prat</option>
+                 <option>Cardenal Caro</option>
+                 <option>Cauquenes</option>
+                 <option>Cautín</option>
+                 <option>Chacabuco</option>
+                 <option>Chañaral</option>
+                 <option>Chiloé</option>
+                 <option>Choapa</option>
+                 <option>Colchagua</option>
+                 <option>Concepción</option>
+                 <option>Copiapó</option>
+                 <option>Cordillera</option>
+                 <option>Coyhaique</option>
+                 <option>Curicó</option>
+                 <option>Diguillín</option>
+                 <option>El Loa</option>
+                 <option>Elqui</option>
+                 <option>General Carrera</option>
+                 <option>Huasco</option>
+                 <option>Iquique</option>
+                 <option>Isla de Pascua</option>
+                 <option>Itata</option>
+                 <option>Limarí</option>
+                 <option>Linares</option>
+                 <option>Llanquihue</option>
+                 <option>Los Andes</option>
+                 <option>Magallanes</option>
+                 <option>Maipo</option>
+                 <option>Malleco</option>
+                 <option>Marga Marga</option>
+                 <option>Melipilla</option>
+                 <option>Osorno</option>
+                 <option>Palena</option>
+                 <option>Parinacota</option>
+                 <option>Petorca</option>
+                 <option>Punilla</option>
+                 <option>Quillota</option>
+                 <option>Ranco</option>
+                 <option>San Antonio</option>
+                 <option>San Felipe de Aconcagua</option>
+                 <option>Santiago</option>
+                 <option>Talagante</option>
+                 <option>Talca</option>
+                 <option>Tamarugal</option>
+                 <option>Tierra del Fuego</option>
+                 <option>Tocopilla</option>
+                 <option>Última Esperanza</option>
+                 <option>Valdivia</option>
+                 <option>Valparaíso</option>
+              </select>
+              
+              <div id="mprovincia" class="text-danger"></div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="inputState" class="form-label">Comuna</label>
+              <select id="comuna" class="form-select ajuste" required>
+                <option selected>— Seleccione una comuna —</option>
+                <option>Algarrobo          </option>
+                <option>Alhué              </option>
+                <option>Alto Biobío        </option>
+                <option>Alto del Carmen    </option>
+                <option>Alto Hospicio      </option>
+                <option>Ancud              </option>
+                <option>Andacollo          </option>
+                <option>Angol              </option>
+                <option>Antártica          </option>
+                <option>Antofagasta        </option>
+                <option>Antuco             </option>
+                <option>Arauco             </option>
+                <option>Arica              </option>
+                <option>Aysén              </option>
+                <option>Buin               </option>
+                <option>Bulnes             </option>
+                <option>Cabildo            </option>
+                <option>Cabo de Hornos     </option>
+                <option>Cabrero            </option>
+                <option>Calama             </option>
+                <option>Calbuco            </option>
+                <option>Caldera            </option>
+                <option>Calera de Tango    </option>
+                <option>Calle Larga        </option>
+                <option>Camarones          </option>
+                <option>Camiña             </option>
+                <option>Canela             </option>
+                <option>Cañete             </option>
+                <option>Carahue            </option>
+                <option>Cartagena          </option>
+                <option>Casablanca         </option>
+                <option>Castro             </option>
+                <option>Catemu             </option>
+                <option>Cauquenes          </option>
+                <option>Cerrillos          </option>
+                <option>Cerro Navia        </option>
+                <option>Chaitén            </option>
+                <option>Chanco             </option>
+                <option>Chañaral           </option>
+                <option>Chépica            </option>
+                <option>Chiguayante        </option>
+                <option>Chile Chico        </option>
+                <option>Chillán            </option>
+                <option>Chillán Viejo      </option>
+                <option>Chimbarongo        </option>
+                <option>Cholchol           </option>
+                <option>Chonchi            </option>
+                <option>Cisnes             </option>
+                <option>Cobquecura         </option>
+                <option>Cochamó            </option>
+                <option>Cochrane           </option>
+                <option>Codegua            </option>
+                <option>Coelemu            </option>
+                <option>Coihueco           </option>
+                <option>Coinco             </option>
+                <option>Colbún             </option>
+                <option>Colchane           </option>
+                <option>Colina             </option>
+                <option>Collipulli         </option>
+                <option>Coltauco           </option>
+                <option>Combarbalá         </option>
+                <option>Concepción         </option>
+                <option>Conchalí           </option>
+                <option>Concón             </option>
+                <option>Constitución       </option>
+                <option>Contulmo           </option>
+                <option>Copiapó            </option>
+                <option>Coquimbo           </option>
+                <option>Coronel            </option>
+                <option>Corral             </option>
+                <option>Coyhaique          </option>
+                <option>Cunco              </option>
+                <option>Curacautín         </option>
+                <option>Curacaví           </option>
+                <option>Curaco de Vélez    </option>
+                <option>Curanilahue        </option>
+                <option>Curarrehue         </option>
+                <option>Curepto            </option>
+                <option>Curicó             </option>
+                <option>Dalcahue           </option>
+                <option>Diego de Almagro   </option>
+                <option>Doñihue            </option>
+                <option>El Bosque          </option>
+                <option>El Carmen          </option>
+                <option>El Monte           </option>
+                <option>El Quisco          </option>
+                <option>El Tabo            </option>
+                <option>Empedrado          </option>
+                <option>Ercilla            </option>
+                <option>Estación Central   </option>
+                <option>Florida            </option>
+                <option>Freire             </option>
+                <option>Freirina           </option>
+                <option>Fresia             </option>
+                <option>Frutillar          </option>
+                <option>Futaleufú          </option>
+                <option>Futrono            </option>
+                <option>Galvarino          </option>
+                <option>General Lagos      </option>
+                <option>Gorbea             </option>
+                <option>Graneros           </option>
+                <option>Guaitecas          </option>
+                <option>Hijuelas           </option>
+                <option>Hualaihué          </option>
+                <option>Hualañé            </option>
+                <option>Hualpén            </option>
+                <option>Hualqui            </option>
+                <option>Huara              </option>
+                <option>Huasco             </option>
+                <option>Huechuraba         </option>
+                <option>Illapel            </option>
+                <option>Independencia      </option>
+                <option>Iquique            </option>
+                <option>Isla de Maipo      </option>
+                <option>Isla de Pascua     </option>
+                <option>Juan Fernández     </option>
+                <option>La Calera          </option>
+                <option>La Cisterna        </option>
+                <option>La Cruz            </option>
+                <option>La Estrella        </option>
+                <option>La Florida         </option>
+                <option>La Granja          </option>
+                <option>La Higuera         </option>
+                <option>La Ligua           </option>
+                <option>La Pintana         </option>
+                <option>La Reina           </option>
+                <option>La Serena          </option>
+                <option>La Unión           </option>
+                <option>Lago Ranco         </option>
+                <option>Lago Verde         </option>
+                <option>Laguna Blanca      </option>
+                <option>Laja               </option>
+                <option>Lampa              </option>
+                <option>Lanco              </option>
+                <option>Las Cabras         </option>
+                <option>Las Condes         </option>
+                <option>Lautaro            </option>
+                <option>Lebu               </option>
+                <option>Licantén           </option>
+                <option>Limache            </option>
+                <option>Linares            </option>
+                <option>Litueche           </option>
+                <option>Llanquihue         </option>
+                <option>Llay-Llay          </option>
+                <option>Lo Barnechea       </option>
+                <option>Lo Espejo          </option>
+                <option>Lo Prado           </option>
+                <option>Lolol              </option>
+                <option>Loncoche           </option>
+                <option>Longaví            </option>
+                <option>Lonquimay          </option>
+                <option>Los Álamos         </option>
+                <option>Los Andes          </option>
+                <option>Los Ángeles        </option>
+                <option>Los Lagos          </option>
+                <option>Los Muermos        </option>
+                <option>Los Sauces         </option>
+                <option>Los Vilos          </option>
+                <option>Lota               </option>
+                <option>Lumaco             </option>
+                <option>Machalí            </option>
+                <option>Macul              </option>
+                <option>Máfil              </option>
+                <option>Maipú              </option>
+                <option>Malloa             </option>
+                <option>Marchihue          </option>
+                <option>María Elena        </option>
+                <option>María Pinto        </option>
+                <option>Mariquina          </option>
+                <option>Maule              </option>
+                <option>Maullín            </option>
+                <option>Mejillones         </option>
+                <option>Melipeuco          </option>
+                <option>Melipilla          </option>
+                <option>Molina             </option>
+                <option>Monte Patria       </option>
+                <option>Mostazal           </option>
+                <option>Mulchén            </option>
+                <option>Nacimiento         </option>
+                <option>Nancagua           </option>
+                <option>Natales            </option>
+                <option>Navidad            </option>
+                <option>Negrete            </option>
+                <option>Ninhue             </option>
+                <option>Nogales            </option>
+                <option>Nueva Imperial     </option>
+                <option>Ñiquén             </option>
+                <option>Ñuñoa              </option>
+                <option>O'Higgins          </option>
+                <option>Olivar             </option>
+                <option>Ollagüe            </option>
+                <option>Olmué              </option>
+                <option>Osorno             </option>
+                <option>Ovalle             </option>
+                <option>Padre Hurtado      </option>
+                <option>Padre Las Casas    </option>
+                <option>Paihuano           </option>
+                <option>Paillaco           </option>
+                <option>Paine              </option>
+                <option>Palena             </option>
+                <option>Palmilla           </option>
+                <option>Panguipulli        </option>
+                <option>Panquehue          </option>
+                <option>Papudo             </option>
+                <option>Paredones          </option>
+                <option>Parral             </option>
+                <option>Pedro Aguirre Cerda</option>
+                <option>Pelarco            </option>
+                <option>Pelluhue           </option>
+                <option>Pemuco             </option>
+                <option>Pencahue           </option>
+                <option>Penco              </option>
+                <option>Peñaflor           </option>
+                <option>Peñalolén          </option>
+                <option>Peralillo          </option>
+                <option>Perquenco          </option>
+                <option>Petorca            </option>
+                <option>Peumo              </option>
+                <option>Pica               </option>
+                <option>Pichidegua         </option>
+                <option>Pichilemu          </option>
+                <option>Pinto              </option>
+                <option>Pirque             </option>
+                <option>Pitrufquén         </option>
+                <option>Placilla           </option>
+                <option>Portezuelo         </option>
+                <option>Porvenir           </option>
+                <option>Pozo Almonte       </option>
+                <option>Primavera          </option>
+                <option>Providencia        </option>
+                <option>Puchuncaví         </option>
+                <option>Pucón              </option>
+                <option>Pudahuel           </option>
+                <option>Puente Alto        </option>
+                <option>Puerto Montt       </option>
+                <option>Puerto Octay       </option>
+                <option>Puerto Varas       </option>
+                <option>Pumanque           </option>
+                <option>Punitaqui          </option>
+                <option>Punta Arenas       </option>
+                <option>Puqueldón          </option>
+                <option>Purén              </option>
+                <option>Purranque          </option>
+                <option>Putaendo           </option>
+                <option>Putre              </option>
+                <option>Puyehue            </option>
+                <option>Queilén            </option>
+                <option>Quellón            </option>
+                <option>Quemchi            </option>
+                <option>Quilaco            </option>
+                <option>Quilicura          </option>
+                <option>Quilleco           </option>
+                <option>Quillón            </option>
+                <option>Quillota           </option>
+                <option>Quilpué            </option>
+                <option>Quinchao           </option>
+                <option>Quinta de Tilcoco  </option>
+                <option>Quinta Normal      </option>
+                <option>Quintero           </option>
+                <option>Quirihue           </option>
+                <option>Rancagua           </option>
+                <option>Ránquil            </option>
+                <option>Rauco              </option>
+                <option>Recoleta           </option>
+                <option>Renaico            </option>
+                <option>Renca              </option>
+                <option>Rengo              </option>
+                <option>Requínoa           </option>
+                <option>Retiro             </option>
+                <option>Rinconada          </option>
+                <option>Río Bueno          </option>
+                <option>Río Claro          </option>
+                <option>Río Hurtado        </option>
+                <option>Río Ibáñez         </option>
+                <option>Río Negro          </option>
+                <option>Río Verde          </option>
+                <option>Romeral            </option>
+                <option>Saavedra           </option>
+                <option>Sagrada Familia    </option>
+                <option>Salamanca          </option>
+                <option>San Antonio        </option>
+                <option>San Bernardo       </option>
+                <option>San Carlos         </option>
+                <option>San Clemente       </option>
+                <option>San Esteban        </option>
+                <option>San Fabián         </option>
+                <option>San Felipe         </option>
+                <option>San Fernando       </option>
+                <option>San Gregorio       </option>
+                <option>San Ignacio        </option>
+                <option>San Javier         </option>
+                <option>San Joaquín        </option>
+                <option>San José de Maipo  </option>
+                <option>San Juan de la Costa</option>
+                <option>San Miguel         </option>
+                <option>San Nicolás        </option>
+                <option>San Pablo          </option>
+                <option>San Pedro          </option>
+                <option>San Pedro de Atacama</option>
+                <option>San Pedro de La Paz</option>
+                <option>San Rafael         </option>
+                <option>San Ramón          </option>
+                <option>San Rosendo        </option>
+                <option>San Vicente        </option>
+                <option>Santa Bárbara      </option>
+                <option>Santa Cruz         </option>
+                <option>Santa Juana        </option>
+                <option>Santa María        </option>
+                <option>Santiago           </option>
+                <option>Santo Domingo      </option>
+                <option>Sierra Gorda       </option>
+                <option>Talagante          </option>
+                <option>Talca              </option>
+                <option>Talcahuano         </option>
+                <option>Taltal             </option>
+                <option>Temuco             </option>
+                <option>Teno               </option>
+                <option>Teodoro Schmidt    </option>
+                <option>Tierra Amarilla    </option>
+                <option>Til Til            </option>
+                <option>Timaukel           </option>
+                <option>Tirúa              </option>
+                <option>Tocopilla          </option>
+                <option>Toltén             </option>
+                <option>Tomé               </option>
+                <option>Torres del Paine   </option>
+                <option>Tortel             </option>
+                <option>Traiguén           </option>
+                <option>Treguaco           </option>
+                <option>Tucapel            </option>
+                <option>Valdivia           </option>
+                <option>Vallenar           </option>
+                <option>Valparaíso         </option>
+                <option>Vichuquén          </option>
+                <option>Victoria           </option>
+                <option>Vicuña             </option>
+                <option>Vilcún             </option>
+                <option>Villa Alegre       </option>
+                <option>Villa Alemana      </option>
+                <option>Villarrica         </option>
+                <option>Viña del Mar       </option>
+                <option>Vitacura           </option>
+                <option>Yerbas Buenas      </option>
+                <option>Yumbel             </option>
+                <option>Yungay             </option>
+                <option>Zapallar           </option>
+              </select>
+              <div id="mcomuna" class="text-danger"></div>
+            </div>
+
+            <div class="form-group form-floating"> 
+              <textarea id = "mensaje" class="form-control ajuste" cols="40" rows="5" style="resize: both;" placeholder="Mensaje" required></textarea>
+              <label for="mensaje">Mensaje</label>
+              <div id="mmensaje" class="text-danger"></div>
+            </div>
+
+          </div>
+            <div class="col-6 btn">
+              <button class="w-100 btn btn-lg btn-primary" type="submit" id="Revisar">Revisar</button>
+            </div>
+            <div class="col-6 btn">
+              <button class="w-100 btn btn-lg btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"  id="enviar">Enviar</button>
+            </div>
       </form>
+    </div>
 
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Solicitud</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" >
+            <p id="solicitudEnviada" ></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <br>
@@ -93,10 +645,10 @@
     </symbol>
   </svg>
 
-  <div class="container">
-    <footer class="py-5">
+  <div class="container-fluid" data-bs-theme="dark">
+    <footer class="py-5 container-fluid bg-info-subtle">
       <div class="row">
-        <div class="col-6 col-md-2 mb-3">
+        <div class="col-6 col-md-2 mb-3 color_pie_pag">
           <h5>Secciones</h5>
           <ul class="nav flex-column">
             <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-body-secondary">Home</a></li>
@@ -107,7 +659,7 @@
           </ul>
         </div>
   
-      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top color_pie_pag">
         <p>&copy; 2023 Toledo, Olivera.</p>
         <ul class="list-unstyled d-flex">
           <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>

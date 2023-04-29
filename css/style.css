@@ -4,6 +4,9 @@
     font-style: italic;
     padding: 20px 20px;
 } */
+body{
+    background-color: blue;
+}
 
 table, th, td{
     border: 1px solid black;
@@ -16,4 +19,47 @@ th, td{
 
 th{
     text-align: left;
+}
+
+.teampad img {
+    max-height: 200px;
+    display: inline-block;
+    margin-bottom: 15px;
+    border-radius:150px;
+    border:10px solid #666;
+}
+
+.ql-align-center {
+    text-align: center;
+}
+
+.row{
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+#pagecontent {
+    padding: 60px 0;
+}
+
+.person_staff {
+    width: 28.666667%;
+    margin-bottom: 30px;
+}
+
+.color_pie_pag{
+    color: white;
+}
+
+.link-body-emphasis svg {
+    fill: white;
+  }
+
+.ajuste{
+    height: 58px;
+}
+
+.btn {
+    margin-left: auto;
+    margin-right: auto;
 }
